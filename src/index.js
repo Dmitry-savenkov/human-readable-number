@@ -6,9 +6,9 @@ module.exports = function toReadable(number) {
      return 'zero';
  }
   const hundreds = Math.floor(number / 100);
-  let ten = Math.floor((number - hundreds * 100) * 10);
-  let one = number - hundreds * 100 - ten / 10;
-  if (ten =! 1) {
+  let ten = Math.floor((number - hundreds * 100) / 10);
+  let one = number - hundreds * 100 - ten * 10;
+  if (ten === 1) {
     one = number - hundreds * 100;
     ten = 0;
   }
